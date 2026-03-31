@@ -47,7 +47,7 @@ Azure Secure VM Architecture
 |                 Daily backup using default policy             |
 +---------------------------------------------------------------+
 
-A. Create Resource Group
+## A. Create Resource Group
 Steps
 Azure Portal → Resource groups
 
@@ -59,10 +59,10 @@ Region: West Europe (or your chosen region)
 
 Review + create → Create
 
-📸 Screenshot
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Resource Group](screenshots-vm-secure/resource-group.png)
 
-🧩 B. Create VNet + Subnet
+
+## B. Create VNet + Subnet
 Steps
 Azure Portal → Virtual networks
 
@@ -80,8 +80,9 @@ Range: 10.0.1.0/24
 
 Review + create → Create
 
-📸 Screenshot
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Vitual Network](screenshots-vm-secure/virtual-network.png)
+![Subnet Config](screenshots-vm-secure/subnet-config.png)
+
 
 🧩 C. Create NSG + Associate
 Steps
@@ -110,8 +111,10 @@ Source: Any
 
 Protocol: TCP (correct for RDP)
 
-📸 Screenshot
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Inbound Rule](screenshots-vm-secure/inbound-rule.png)
+![Inbound Rule2](screenshots-vm-secure/inbound-rule2.png)
+
+
 
 🧩 D. Create VM (No Public IP)
 Steps
@@ -135,8 +138,8 @@ NIC NSG: None (subnet NSG already applied)
 
 Review + create → Create
 
-📸 Screenshot
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Virtual Machine](screenshots-vm-secure/virtual-machine.png)
+
 
 🧩 E. Deploy Bastion
 Steps
@@ -148,8 +151,7 @@ Accept defaults
 
 Review + create → Create
 
-📸 Screenshot
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Bastion Connected](screenshots-vm-secure/bastion-connected.png)
 
 🧩 F. Connect via Bastion
 Steps
@@ -159,8 +161,7 @@ Enter VM credentials
 
 Browser RDP session opens
 
-📸 Screenshot
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Bastion Connected](screenshots-vm-secure/bastion-connected.png)
 
 🧩 G. Enable Backup
 Steps
@@ -172,9 +173,9 @@ Apply Default policy
 
 Enable backup
 
-![Backup ](screenshots-vm-secure/backup-config.png)
+![Backup Configured](screenshots-vm-secure/backup-configured.png)
 
-🎯 Skills Demonstrated
+##  Skills Demonstrated
 Secure VM deployment (no public IP)
 
 Azure Bastion configuration
