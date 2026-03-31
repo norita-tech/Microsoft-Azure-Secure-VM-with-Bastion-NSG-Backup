@@ -172,8 +172,7 @@ Apply Default policy
 
 Enable backup
 
-📸 Screenshot
-[Looks like the result wasn't safe to show. Let's switch things up and try something else!]
+![Backup ](screenshots-vm-secure/backup-config.png)
 
 🎯 Skills Demonstrated
 Secure VM deployment (no public IP)
