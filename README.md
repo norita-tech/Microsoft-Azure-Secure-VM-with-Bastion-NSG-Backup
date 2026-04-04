@@ -1,51 +1,22 @@
 # Azure Secure VM Deployment with Bastion, NSG & Backup
 ## Overview
+
 This project demonstrates how to securely deploy a Windows virtual machine in Azure without a public IP, using:
 
-Virtual Network + Subnet
-
-Network Security Group (NSG)
-
-Azure Bastion for secure RDP access
-
-Azure Backup for VM protection
+- Virtual Network + Subnet
+- Network Security Group (NSG)
+- Azure Bastion for secure RDP access
+- Azure Backup for VM protection
 
 This setup follows real‑world security best practices by eliminating public exposure and enforcing controlled access through Bastion.
 
 
-Architecture
-Text‑Based Diagram
+## Architecture
+
 Azure Secure VM Architecture
 
-+---------------------------------------------------------------+
-|                        Resource Group                         |
-|                    rg-secure-vm-demo                          |
-+---------------------------------------------------------------+
+![Architecture Vmsecure](screenshots-vm-secure/architecture-vmsecure.png)
 
-+----------------------+        +------------------------------+
-|   Virtual Network    |        |   Network Security Group     |
-|   vnet-secure-demo   |        |       nsg-app-subnet         |
-|   10.0.0.0/16        |        |   Inbound: Allow RDP (100)   |
-+----------+-----------+        +------------------------------+
-           |
-           | Subnet: subnet-app (10.0.1.0/24)
-           v
-+---------------------------------------------------------------+
-|                     Virtual Machine                           |
-|                       vm-secure-app                           |
-|                 Windows Server 2022/2025                      |
-|                 Public IP: None                               |
-+---------------------------------------------------------------+
-
-+---------------------------------------------------------------+
-|                         Azure Bastion                         |
-|                 Secure browser-based RDP access               |
-+---------------------------------------------------------------+
-
-+---------------------------------------------------------------+
-|                 Recovery Services Vault (Backup)              |
-|                 Daily backup using default policy             |
-+---------------------------------------------------------------+
 
 ## A. Create Resource Group
 Steps
@@ -84,7 +55,7 @@ Review + create → Create
 ![Subnet Config](screenshots-vm-secure/subnet-config.png)
 
 
-🧩 C. Create NSG + Associate
+## C. Create NSG + Associate
 Steps
 Azure Portal → Network security groups
 
@@ -116,7 +87,7 @@ Protocol: TCP (correct for RDP)
 
 
 
-🧩 D. Create VM (No Public IP)
+## D. Create VM (No Public IP)
 Steps
 Azure Portal → Virtual machines → Create
 
@@ -141,7 +112,7 @@ Review + create → Create
 ![Virtual Machine](screenshots-vm-secure/virtual-machine.png)
 
 
-🧩 E. Deploy Bastion
+## E. Deploy Bastion
 Steps
 Open the VM → Connect → Bastion
 
@@ -153,7 +124,7 @@ Review + create → Create
 
 ![Bastion Connected](screenshots-vm-secure/bastion-connected.png)
 
-🧩 F. Connect via Bastion
+## F. Connect via Bastion
 Steps
 VM → Connect → Bastion
 
@@ -163,7 +134,7 @@ Browser RDP session opens
 
 ![Bastion Connected](screenshots-vm-secure/bastion-connected.png)
 
-🧩 G. Enable Backup
+## G. Enable Backup
 Steps
 VM → Backup
 
@@ -192,16 +163,13 @@ Cloud security best practices
 
 Professional documentation & architecture design
 
-🏁 Conclusion
+## Conclusion
 This project demonstrates how to deploy a secure Azure VM using best practices:
 
-No public exposure
-
-Controlled access via Bastion
-
-Network segmentation
-
-Backup protection
+- No public exposure
+- Controlled access via Bastion
+- Network segmentation
+- Backup protection
 
 
 
