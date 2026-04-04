@@ -171,7 +171,9 @@ This project demonstrates how to deploy a secure Azure VM using best practices:
 - Network segmentation
 - Backup protection
 
-
+## Author
+Norita
+Cloud Engineer/Cloud Administrator in training | Azure-focused | Based in Switzerland
 
 
 
